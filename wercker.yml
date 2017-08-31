@@ -3,6 +3,8 @@ box:
     tag: $APP_TAG
     registry: https://registry.hub.docker.com
 
+build:
+
 deploy:
   steps:
     - internal/docker-push:
