@@ -4,6 +4,8 @@ box:
     registry: https://registry.hub.docker.com
 
 build:
+  steps:
+    - ls -l
 
 deploy:
   steps:
