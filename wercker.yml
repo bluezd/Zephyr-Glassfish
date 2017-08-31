@@ -5,7 +5,11 @@ box:
 
 build:
   steps:
-    - ls -l
+    - script:
+        name: check
+        code: |
+            ls -l
+            uname -a
 
 deploy:
   steps:

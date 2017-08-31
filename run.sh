@@ -14,6 +14,6 @@ sleep 30
 
 echo -e "\n# starting glassfish #"
 #sudo docker run -p 8080:8080 -p 4848:4848 -p 8181:8181 --link mysql:mysqlDB glassfish-5.0-db
-#sudo docker run --cap-add=NET_ADMIN -p 8080:8080 -p 4848:4848 -p 8181:8181 -ti -v /home/jude/Docker/glassfish-5.0-db/lib/:/mnt --link postgres:postgres -ti glassfish-4.1.2-jdk-8-postgres /bin/bash
+#sudo docker run --cap-add=NET_ADMIN -p 8080:8080 -p 4848:4848 -p 8181:8181 -ti -v /home/jude/Docker/glassfish-5.0-db/lib/:/mnt --link postgres:postgres -ti bluezd/zephyr-glassfish /bin/bash
 
-sudo docker run  -p 8080:8080 -p 4848:4848 -p 8181:8181 -ti --link postgres:postgresDBAddr glassfish-4.1.2-jdk-8-postgres
+sudo docker run  -p 8080:8080 -p 4848:4848 -p 8181:8181 -ti --link postgres:postgresDBAddr bluezd/zephyr-glassfish 
