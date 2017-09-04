@@ -6,17 +6,33 @@ box:
 build:
   steps:
     - script:
-        name: install
+        name: install packages
         code: |
-            env
-            psql --version
+            yum -y install unzip iptables postgresql util-linux iputils sudo net-tools
+            curl -O $GLASSFISH_URL
+            echo "$GLASSFISH_MD5 *$GLASSFISH_PKG" | md5sum -c
+            unzip -o $GLASSFISH_PKG
+            rm -f $GLASSFISH_PKG
+            yum -y remove unzip
+            yum clean all
+            export PATH=$PATH:/glassfish4/bin
+
+    - script:
+        name: copy files
+        code: |
+              ln -s docker-entrypoint.sh /docker-entrypoint.sh
+              ln -s start-domain.sh /start-domain.sh
+              ln -s setupDB-postgres.sh /setupDB-postgres.sh
+              cp lib/org.eclipse.persistence.moxy.jar $GLASSFISH_HOME/glassfish/modules
+              ln -s lib /projectLib
     - script:
         name: check
         code: |
+            pwd
             ls -l
             ls -l /
-            java -version
-            #jq --version
+            env
+            echo $PATH
 deploy:
   steps:
     - internal/docker-push:
