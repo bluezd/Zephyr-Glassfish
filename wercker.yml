@@ -8,14 +8,15 @@ build:
     - script:
         name: install
         code: |
-            yum install jq
+            env
+            psql --version
     - script:
         name: check
         code: |
             ls -l
             ls -l /
             java -version
-            jq --version
+            #jq --version
 deploy:
   steps:
     - internal/docker-push:
