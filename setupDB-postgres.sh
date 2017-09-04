@@ -26,5 +26,5 @@ fi
 
 echo -e '  -> Executing sql ...'
 # execute the sql (https://www.postgresql.org/docs/8.3/static/libpq-pgpass.html)
-PGPASSWORD=$PostgresPassword psql -h $PostgresHost -p $PostgresPort -U $PostgresUser -f /projectLib/db/postgres.sql
+PGPASSWORD=$PostgresPassword psql -h $PostgresHost -p $PostgresPort -U $PostgresUser -f /pipeline/source/lib/db/postgres.sql
 #echo -e '  -> Done .'

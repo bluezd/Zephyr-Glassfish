@@ -25,7 +25,7 @@ if [[ $RES -eq 0 ]]; then
 
 	echo -e "\n# sleep for one minute for waiting glassfish load all required jars #"
 	sleep 60
-	JavaAppPath="/glassfish4/glassfish/domains/domain1/autodeploy/bundles/ZephyrWebSitesWebBundlesSoftware-1.0.0.war"
+	JavaAppPath="$GLASSFISH_HOME/glassfish/domains/domain1/autodeploy/bundles/ZephyrWebSitesWebBundlesSoftware-1.0.0.war"
 	echo -e "\n# deploying the Java App (${JavaAppPath}) #"
 	echo "y" | asadmin --user=admin --passwordfile=/tmp/glassfishpwd deploy --name Zephyr-WebSites-WebBundles-Software --contextroot ZephyrWebSitesWebBundlesSoftware --force $JavaAppPath 
 	RES=$?

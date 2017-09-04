@@ -15,10 +15,9 @@ echo "AS_ADMIN_PASSWORD=${ADMIN_PASSWORD}" > /tmp/glassfishpwd
 asadmin --user=admin --passwordfile=/tmp/glassfishpwd enable-secure-admin
 asadmin --user=admin stop-domain
 
-cp /projectLib/jar/* $GLASSFISH_HOME/glassfish/domains/$domainName/autodeploy/bundles/ 
-cp /projectLib/dbDriver/* $GLASSFISH_HOME/glassfish/domains/$domainName/lib/
-cp $GLASSFISH_HOME/glassfish/domains/$domainName/config/domain.xml /mnt/domain-bak.xml
-cp /projectLib/domain.xml $GLASSFISH_HOME/glassfish/domains/$domainName/config/domain.xml
+cp /pipeline/source/lib/jar/* $GLASSFISH_HOME/glassfish/domains/$domainName/autodeploy/bundles/
+cp /pipeline/source/lib/dbDriver/* $GLASSFISH_HOME/glassfish/domains/$domainName/lib/
+cp /pipeline/source/lib/domain.xml $GLASSFISH_HOME/glassfish/domains/$domainName/config/domain.xml
 
 exec "$@"
 
