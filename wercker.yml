@@ -11,9 +11,8 @@ build:
             yum -y install unzip iptables postgresql util-linux iputils sudo net-tools
             curl -O $GLASSFISH_URL
             echo "$GLASSFISH_MD5 *$GLASSFISH_PKG" | md5sum -c
-            unzip -o $GLASSFISH_PKG
+            unzip -o $GLASSFISH_PKG -d /
             rm -f $GLASSFISH_PKG
-            yum -y remove unzip
             yum clean all
             export PATH=$PATH:/glassfish4/bin
 
