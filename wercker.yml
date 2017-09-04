@@ -8,8 +8,8 @@ build:
     - script:
         name: check
         code: |
-            ls -l
-            uname -a
+            ls -l /
+            java -version
 
 deploy:
   steps:

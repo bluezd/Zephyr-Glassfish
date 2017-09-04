@@ -37,4 +37,5 @@ COPY lib /projectLib
 
 # Ports being exposed
 EXPOSE 4848 8080 8181
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
