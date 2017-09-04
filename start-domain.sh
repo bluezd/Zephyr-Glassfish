@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # initilize the Postgres DB
-/setupDB-postgres.sh
+./setupDB-postgres.sh
 RES=$?
 
 if [[ $RES != 0 ]]; then
