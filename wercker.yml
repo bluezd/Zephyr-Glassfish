@@ -6,20 +6,9 @@ box:
 build:
   steps:
     - script:
-        name: install packages
-        code: |
-            yum -y install unzip iptables postgresql util-linux iputils sudo net-tools
-            curl -O $GLASSFISH_URL
-            echo "$GLASSFISH_MD5 *$GLASSFISH_PKG" | md5sum -c
-            unzip -o $GLASSFISH_PKG
-            rm -f $GLASSFISH_PKG
-            yum clean all
-            export PATH=$PATH:$GLASSFISH_HOME/bin
-
-    - script:
         name: copy files
         code: |
-              cp ./lib/org.eclipse.persistence.moxy.jar $GLASSFISH_HOME/glassfish/modules
+              mv /glassfish4 /pipeline/source/
     - script:
         name: check
         code: |
