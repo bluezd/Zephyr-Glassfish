@@ -6,6 +6,10 @@ box:
 build:
   steps:
     - script:
+        name: install
+        code: |
+            yum install jq
+    - script:
         name: check
         code: |
             ls -l
