@@ -3,7 +3,7 @@
 # 
 # Copyright (c) 2017 Oracle and/or its affiliates. All rights reserved.
 
-VER="1.0"
+VER="1.1"
 
 echo "* Starting App Version ($VER) *"
 
